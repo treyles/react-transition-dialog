@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
-class ClickOutside extends Component {
+class TransitionDialog extends Component {
   constructor(props) {
     super(props);
 
@@ -59,7 +59,7 @@ class ClickOutside extends Component {
   }
 }
 
-ClickOutside.propTypes = {
+TransitionDialog.propTypes = {
   onRequestClose: PropTypes.func.isRequired,
   elementIsOpen: PropTypes.bool.isRequired,
   children: PropTypes.element.isRequired,
@@ -69,4 +69,4 @@ ClickOutside.propTypes = {
   onExited: PropTypes.func
 };
 
-export default ClickOutside;
+export default TransitionDialog;

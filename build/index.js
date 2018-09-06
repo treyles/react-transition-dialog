@@ -1978,20 +1978,20 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ClickOutside = function (_Component) {
-  _inherits(ClickOutside, _Component);
+var TransitionDialog = function (_Component) {
+  _inherits(TransitionDialog, _Component);
 
-  function ClickOutside(props) {
-    _classCallCheck(this, ClickOutside);
+  function TransitionDialog(props) {
+    _classCallCheck(this, TransitionDialog);
 
-    var _this = _possibleConstructorReturn(this, (ClickOutside.__proto__ || Object.getPrototypeOf(ClickOutside)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (TransitionDialog.__proto__ || Object.getPrototypeOf(TransitionDialog)).call(this, props));
 
     _this.setWrapperRef = _this.setWrapperRef.bind(_this);
     _this.handleClickOutside = _this.handleClickOutside.bind(_this);
     return _this;
   }
 
-  _createClass(ClickOutside, [{
+  _createClass(TransitionDialog, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps) {
       var elementIsOpen = this.props.elementIsOpen;
@@ -2048,10 +2048,10 @@ var ClickOutside = function (_Component) {
     }
   }]);
 
-  return ClickOutside;
+  return TransitionDialog;
 }(_react.Component);
 
-ClickOutside.propTypes = {
+TransitionDialog.propTypes = {
   onRequestClose: _propTypes2.default.func.isRequired,
   elementIsOpen: _propTypes2.default.bool.isRequired,
   children: _propTypes2.default.element.isRequired,
@@ -2061,7 +2061,7 @@ ClickOutside.propTypes = {
   onExited: _propTypes2.default.func
 };
 
-exports.default = ClickOutside;
+exports.default = TransitionDialog;
 
 /***/ }),
 /* 20 */

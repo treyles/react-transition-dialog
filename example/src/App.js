@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ClickOutside from 'react-transition-dialog';
-// import Fancy from 'react-transition-dialog';
+import TransitionDialog from 'react-transition-dialog';
 
 class App extends Component {
   constructor(props) {
@@ -34,14 +33,14 @@ class App extends Component {
       <div
         style={{
           position: 'absolute',
-          left: '0px',
-          top: '0px',
+          left: '20px',
+          top: '20px',
           width: '100px',
           height: '50px',
           background: 'dodgerBlue'
         }}
       >
-        <button onClick={() => console.log('works')}>button</button>
+        <button onClick={() => console.log('works')}>buttton</button>
       </div>
     );
 
@@ -51,15 +50,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <button onClick={this.handleClick}>click</button>
-        <ClickOutside
+        <button onClick={this.handleClick}>clicker</button>
+        <TransitionDialog
           elementIsOpen={clicked}
           onRequestClose={this.closeDialog}
           timeout={600}
           classNames="message"
         >
           {dialog}
-        </ClickOutside>
+        </TransitionDialog>
       </div>
     );
   }
