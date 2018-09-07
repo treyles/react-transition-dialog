@@ -11,10 +11,10 @@ class TransitionDialog extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { elementIsOpen } = this.props;
+    const { dialogIsOpen } = this.props;
 
-    if (prevProps.elementIsOpen !== elementIsOpen) {
-      if (elementIsOpen) {
+    if (prevProps.dialogIsOpen !== dialogIsOpen) {
+      if (dialogIsOpen) {
         document.addEventListener('click', this.handleClickOutside);
       } else {
         document.removeEventListener('click', this.handleClickOutside);
@@ -28,13 +28,13 @@ class TransitionDialog extends Component {
 
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.props.onRequestClose();
+      this.props.toggleDialog();
     }
   }
 
   render() {
     const {
-      elementIsOpen,
+      dialogIsOpen,
       children,
       timeout,
       classNames,
@@ -45,7 +45,7 @@ class TransitionDialog extends Component {
     return (
       <div ref={this.setWrapperRef}>
         <CSSTransition
-          in={elementIsOpen}
+          in={dialogIsOpen}
           timeout={timeout}
           classNames={classNames}
           onEntered={onEntered || undefined}
@@ -60,8 +60,8 @@ class TransitionDialog extends Component {
 }
 
 TransitionDialog.propTypes = {
-  onRequestClose: PropTypes.func.isRequired,
-  elementIsOpen: PropTypes.bool.isRequired,
+  toggleDialog: PropTypes.func.isRequired,
+  dialogIsOpen: PropTypes.bool.isRequired,
   children: PropTypes.element.isRequired,
   timeout: PropTypes.number.isRequired,
   classNames: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),

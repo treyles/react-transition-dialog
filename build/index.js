@@ -1994,11 +1994,11 @@ var TransitionDialog = function (_Component) {
   _createClass(TransitionDialog, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps) {
-      var elementIsOpen = this.props.elementIsOpen;
+      var dialogIsOpen = this.props.dialogIsOpen;
 
 
-      if (prevProps.elementIsOpen !== elementIsOpen) {
-        if (elementIsOpen) {
+      if (prevProps.dialogIsOpen !== dialogIsOpen) {
+        if (dialogIsOpen) {
           document.addEventListener('click', this.handleClickOutside);
         } else {
           document.removeEventListener('click', this.handleClickOutside);
@@ -2014,14 +2014,14 @@ var TransitionDialog = function (_Component) {
     key: 'handleClickOutside',
     value: function handleClickOutside(event) {
       if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-        this.props.onRequestClose();
+        this.props.toggleDialog();
       }
     }
   }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
-          elementIsOpen = _props.elementIsOpen,
+          dialogIsOpen = _props.dialogIsOpen,
           children = _props.children,
           timeout = _props.timeout,
           classNames = _props.classNames,
@@ -2035,7 +2035,7 @@ var TransitionDialog = function (_Component) {
         _react2.default.createElement(
           _reactTransitionGroup.CSSTransition,
           {
-            'in': elementIsOpen,
+            'in': dialogIsOpen,
             timeout: timeout,
             classNames: classNames,
             onEntered: onEntered || undefined,
@@ -2052,8 +2052,8 @@ var TransitionDialog = function (_Component) {
 }(_react.Component);
 
 TransitionDialog.propTypes = {
-  onRequestClose: _propTypes2.default.func.isRequired,
-  elementIsOpen: _propTypes2.default.bool.isRequired,
+  toggleDialog: _propTypes2.default.func.isRequired,
+  dialogIsOpen: _propTypes2.default.bool.isRequired,
   children: _propTypes2.default.element.isRequired,
   timeout: _propTypes2.default.number.isRequired,
   classNames: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
