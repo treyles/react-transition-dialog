@@ -13,7 +13,7 @@ Install with [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com):
 
 ## Usage
 
-`timeout`, `classNames`, `onEntered`, `onExited` and CSS selectors are handled by _CSSTransition_ . See [documentation](https://reactcommunity.org/react-transition-group/css-transition) for more information.
+`timeout`, `classNames`, `onEntered`, `onExited` and CSS selectors are handled by _CSSTransition_. See [documentation](https://reactcommunity.org/react-transition-group/css-transition) for more information.
 
 ### Component:
 
