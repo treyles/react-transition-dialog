@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/1aXEK1a.gif" width="300px"/>
 
-Tiny React component for dialog transitions with click-outside functionality. Uses React _CSSTransition_ (React-transition-group).
+Tiny React component for dialog transitions with click-outside functionality. Uses React [_CSSTransition_](https://reactcommunity.org/react-transition-group/css-transition) (react-transition-group).
 
 ## Installation
 
@@ -13,14 +13,12 @@ Install with [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com):
 
 ## Usage
 
-`timeout`, `classNames`, `onEntered`, `onExited` and CSS selectors are handled by _CSSTransition_. See [documentation](https://reactcommunity.org/react-transition-group/css-transition) for more information.
-
 ### Component:
 
 ```jsx
 <TransitionDialog
   // required props
-  elementIsOpen={true}
+  dialogIsOpen={true}
   toggleDialog={this.method}
   timeout={200}
   classNames="message"

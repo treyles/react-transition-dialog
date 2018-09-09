@@ -50,6 +50,7 @@ class TransitionDialog extends Component {
           classNames={classNames}
           onEntered={onEntered || undefined}
           onExited={onExited || undefined}
+          mountOnEnter
           unmountOnExit
         >
           {children}

@@ -1,6 +1,6 @@
 {
   "name": "react-transition-dialog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React component for dialog transitions with click outside functionality",
   "main": "build/index.js",
   "license": "MIT",

@@ -2040,6 +2040,7 @@ var TransitionDialog = function (_Component) {
             classNames: classNames,
             onEntered: onEntered || undefined,
             onExited: onExited || undefined,
+            mountOnEnter: true,
             unmountOnExit: true
           },
           children
